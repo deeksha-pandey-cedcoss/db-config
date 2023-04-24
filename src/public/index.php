@@ -26,7 +26,12 @@ $loader->registerDirs(
         APP_PATH . "/etc/",
     ]
 );
-
+$loader->registerNamespaces(
+    [
+       'MyApp\Config' => APP_PATH . '/etc/',
+       
+    ]
+);
 $loader->register();
 
 $container = new FactoryDefault();
