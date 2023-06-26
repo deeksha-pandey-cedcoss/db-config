@@ -62,14 +62,14 @@ $container->set(
      return new Mysql($this['config']->db->toArray());
     }
 );
-$container->set(
-    'config',
-    function () {
-        $fileName='../app/etc/config.php';
-        $factory= new ConfigFactory();
-        return $config=$factory->newInstance('php', $fileName);
-    }
-);
+// $container->set(
+//     'config',
+//     function () {
+//         $fileName=APP_PATH.'/etc/';
+//         $factory= new ConfigFactory();
+//         return $config=$factory->newInstance('php', $fileName);
+//     }
+// );
 
 $container->set(
     'db',

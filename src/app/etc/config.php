@@ -1,24 +1,26 @@
 <?php
 // configuration with app and database details
-namespace MyApp\Config; 
+namespace MyApp\Config;
 
-class config{
+class config
+{
 
     function demo()
     {
-        return[
-            'app'=>[
-                'name'=>'My App',
-                'version'=>'1.0'
-            ],
-            'db'=>[
-                    'host'     => 'mysql-server',
-                    'username' => 'root',
-                    'password' => 'secret',
-                    'dbname'   => 'phalt',
-            ]
-        ];
+        return [
+           [
+                'name' => 'My App',
+                'version' => '1.0',
+           ],
+           [
+                'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
+           ],
+           [
+             'developer' => 'Deeksha Pandey'
+           ],
+           [
+            'production' =>[]
+           ],
+            ];
     }
 }
-
-
